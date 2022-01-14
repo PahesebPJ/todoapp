@@ -1,0 +1,14 @@
+.App {
+  height: 100vh;
+  width: 100vw;
+}
+
+.projects-task-grid {
+  display: grid;
+  grid-template-columns: 8% 92%;
+  grid-template-rows: 100%;
+  width: 90%;
+  height: calc(100% - 150px);
+  position: relative;
+  margin: 0 auto;
+}
