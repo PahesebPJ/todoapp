@@ -1,7 +1,7 @@
 import React from "react";
 
 //Components imports
-import UserComponent from "./components/userComponent/UserComponent";
+import Navbar from "./components/Navbar/Navbar";
 import ProjectsComponent from "./components/projectsComponent/ProjectsComponent";
 import TaskComponent from "./components/taskComponent/TaskComponent";
 
@@ -12,7 +12,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <UserComponent />
+      <Navbar />
       <div className="projects-task-grid">
         <ProjectsComponent />
         <TaskComponent />
