@@ -1,19 +1,13 @@
-:root {
-    --main-color: #ffffff;
-    --second-color: #111111;
-    --contrast-color: #1681fd;
-}
-
 .container {
     position: absolute;
-    left: 0;
     height: 100%;
     width: 10%;
+    overflow-y: scroll;
 }
 
 ion-icon {
     font-size: 30px;
-    color: var(--second-color);
+    color: #495057;
     transition: all .1s linear;
     transform: rotate(90deg);
 }
@@ -23,7 +17,7 @@ ion-icon:hover {
 }
 
 .project__card__container {
-    margin-bottom: 5px;
+    margin-top: 20px;
     overflow: hidden;
 }
 
@@ -37,7 +31,31 @@ ion-icon:hover {
 
 .project__card__img:hover {
     cursor: pointer;
+    border-radius: 30%;
+    transition: 0.1s;
 }
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 
 /* Animations */
 @keyframes movementAtDisplay {
