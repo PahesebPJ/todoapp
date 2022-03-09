@@ -52,7 +52,7 @@ function Navbar() {
                 <input type="text" placeholder="  Search Task, Projects etc.." className="searchBar-container__input" />
             </div>
 
-            <p className="project-title">To-Do Application</p>
+            <p className="project-title">ToDo App</p>
         </div>
     )
 }

@@ -5,6 +5,8 @@ import axios from 'axios';
 import './ProjectsComponent.css'
 
 //Icons
+import { FaPlus } from "react-icons/fa";
+
 
 function ProjectsComponent() {
 
@@ -41,9 +43,15 @@ function ProjectsComponent() {
                         /*  style={toggle ? projectCardContaineratDisappear : {}} */
                         />
                     </div>
-
                 ))
             }
+            <div className="project__card__container">
+                <FaPlus
+                    className="project__card__add"
+                    alt=""
+                /*  style={toggle ? projectCardContaineratDisappear : {}} */
+                />
+            </div>
 
         </div>
     )
