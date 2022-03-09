@@ -16,7 +16,7 @@ function ProjectsComponent() {
     }
 
     useEffect(() => {
-        axios.get('http://localhost:4000/api/userprojects/1').then(response => {
+        axios.get('http://192.168.0.2:4000/api/userprojects/1').then(response => {
             setProjects(response.data);
         });
     }, []);
