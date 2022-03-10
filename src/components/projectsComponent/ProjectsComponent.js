@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 //Styles
 import './ProjectsComponent.css'
@@ -10,37 +11,28 @@ import { FaPlus } from "react-icons/fa";
 
 function ProjectsComponent() {
 
-    /* const [toggle, setToggle] = React.useState(false); */
+    const navigate = useNavigate();
+
     const [projects, setProjects] = React.useState([]);
 
-    /* const handleClick = () => {
-        let icon = document.querySelector('ion-icon');
-        toggle ? icon.style.transform = 'rotate(90deg)' : icon.style.transform = 'rotate(180deg)';
-        setToggle(!toggle);
-    } */
+    function navigateTo(id){
+        navigate('task/' + id);
+    }
 
     useEffect(() => {
         axios.get('http://192.168.0.2:4000/api/userprojects/1').then(response => {
             setProjects(response.data);
         });
     }, []);
-
-    const projectCardContaineratDisappear = {
-        animation: "movementAtDisappear 0.7s linear",
-        animationFillMode: "forwards",
-    }
-
     return (
         <div className='container'>
-            {/* <ion-icon name="chevron-forward-outline" onClick={handleClick}></ion-icon> */}
             {
                 projects.map(project => (
-                    <div className="project__card__container" key={project.id}>
+                    <div className="project__card__container" key={project.id} onClick={() => navigateTo(project.id)}>
                         <img
                             className="project__card__img"
                             alt=""
                             src={project.picture}
-                        /*  style={toggle ? projectCardContaineratDisappear : {}} */
                         />
                     </div>
                 ))
@@ -49,7 +41,6 @@ function ProjectsComponent() {
                 <FaPlus
                     className="project__card__add"
                     alt=""
-                /*  style={toggle ? projectCardContaineratDisappear : {}} */
                 />
             </div>
 

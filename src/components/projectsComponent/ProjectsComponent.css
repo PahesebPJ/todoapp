@@ -33,7 +33,7 @@ ion-icon:hover {
 .project__card__img:hover {
     cursor: pointer;
     border-radius: 30%;
-    transition: 0.3s;
+    transition: 0.1s;
 }
 
 .project__card__add {

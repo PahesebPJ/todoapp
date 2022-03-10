@@ -1,4 +1,5 @@
 import React from "react";
+import { Route, Routes } from 'react-router-dom'
 
 //Components imports
 import Navbar from "./components/Navbar/Navbar";
@@ -14,8 +15,10 @@ function App() {
     <div className="App">
       <Navbar />
       <div className="projects-task-grid">
-        <ProjectsComponent />
-        <TaskComponent />
+          <ProjectsComponent />
+          <Routes>
+            <Route path="task/:id" element={<TaskComponent />} />
+          </Routes>
       </div>
     </div>
   );
