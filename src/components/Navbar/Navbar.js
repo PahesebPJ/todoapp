@@ -12,7 +12,7 @@ function Navbar() {
     const [user, setUser] = React.useState([]);
     const [showModal, setShowModal] = React.useState(false);
 
-    const baseURL = 'http://192.168.0.2:4000/';
+    const baseURL = 'http://192.168.0.12:4000/';
 
     useEffect(() => {
         axios.get(baseURL + 'api/users/1').then(response => {
