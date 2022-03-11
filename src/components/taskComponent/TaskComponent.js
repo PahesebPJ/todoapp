@@ -11,7 +11,9 @@ function TaskComponent() {
 
     const params = useParams();
 
-    //Button id array
+    let filterTasks;
+
+    //Button array to create buttons automatically
     let buttons = [
         {
             id: 1,
@@ -34,6 +36,7 @@ function TaskComponent() {
                 console.log(tasks[i].name);
             }
         }
+        filterTasks = button.name;
     }
 
     useEffect(() => {
@@ -48,7 +51,7 @@ function TaskComponent() {
     return (
         <div className='container-task'>
             <div className="container-task-filter">
-                <h1 className="container-task-filter__title">Work</h1>
+                <h1 className="container-task-filter__title">Project Tasks</h1>
                 <div className="container-task-filter__buttons">
                     {
                         buttons.map(button => {
@@ -64,7 +67,6 @@ function TaskComponent() {
                     }
                 </div>
             </div>
-
             {
                 tasks.map(task => (
                     <div className='task-container' key={task.id}>

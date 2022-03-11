@@ -31,9 +31,15 @@
     padding: 5px;
     width: 90px;
     background-color: #fff;
+    border: 1px solid #4dabf7;
+    color: #4dabf7;
     border-radius: 7px;
-    border: none;
     transition: 0.2s;
+}
+
+.container-task-filter__button:hover{
+    cursor: pointer;
+    
 }
 
 .container-task-filter__button:focus{
