@@ -11,18 +11,18 @@ function TaskComponent() {
 
     const params = useParams();
 
-    function getTasks() {
-        axios.get("http://localhost:4000/api/task/" + params.id).then(response => {
-            setTasks(response.data);
-        });
-    }
-
     useEffect(() => {
-        getTasks();
-    }, []);
+        async function fetchData() {
+            const request = await axios.get("http://192.168.0.2:4000/api/task/" + params.id);
+            setTasks(request.data);
+            return request;
+        }
+        fetchData();
+    }, [params.id]);
 
     return (
         <div className='container-task'>
+            {tasks[0].name}
         </div>
     )
 }
