@@ -1,4 +1,5 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 //Styles
@@ -8,13 +9,20 @@ function TaskComponent() {
 
     const [tasks, setTasks] = React.useState([]);
 
+    const params = useParams();
+
+    function getTasks() {
+        axios.get("http://localhost:4000/api/task/" + params.id).then(response => {
+            setTasks(response.data);
+        });
+    }
+
     useEffect(() => {
-        
+        getTasks();
     }, []);
-    
+
     return (
         <div className='container-task'>
-            Task Component works!
         </div>
     )
 }

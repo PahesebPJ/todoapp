@@ -27,7 +27,7 @@ ion-icon:hover {
     border-radius: 100%;
     animation: movementAtDisplay .5s linear;
     animation-fill-mode: forwards;
-    border: 0.1px solid #888f96;
+    border: 0.5px solid #888f96;
 }
 
 .project__card__img:hover {

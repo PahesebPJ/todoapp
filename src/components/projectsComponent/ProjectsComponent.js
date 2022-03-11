@@ -15,7 +15,7 @@ function ProjectsComponent() {
 
     const [projects, setProjects] = React.useState([]);
 
-    function navigateTo(id){
+    function navigateTo(id) {
         navigate('task/' + id);
     }
 
