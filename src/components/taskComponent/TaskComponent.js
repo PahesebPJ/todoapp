@@ -11,8 +11,6 @@ function TaskComponent() {
 
     const params = useParams();
 
-    let filterTasks;
-
     //Button array to create buttons automatically
     let buttons = [
         {
@@ -36,7 +34,6 @@ function TaskComponent() {
                 console.log(tasks[i].name);
             }
         }
-        filterTasks = button.name;
     }
 
     useEffect(() => {
