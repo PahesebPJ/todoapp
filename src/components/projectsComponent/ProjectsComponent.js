@@ -20,7 +20,7 @@ function ProjectsComponent() {
     }
 
     useEffect(() => {
-        axios.get('http://192.168.0.12:4000/api/userprojects/1').then(response => {
+        axios.get('http://192.168.0.13:4000/api/userprojects/1').then(response => {
             setProjects(response.data);
         });
     }, []);

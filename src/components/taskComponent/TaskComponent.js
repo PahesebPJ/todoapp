@@ -38,7 +38,7 @@ function TaskComponent() {
 
     useEffect(() => {
         async function fetchData() {
-            const request = await axios.get("http://192.168.0.12:4000/api/task/" + params.id);
+            const request = await axios.get("http://192.168.0.13:4000/api/task/" + params.id);
             setTasks(request.data);
             return request;
         }
@@ -66,9 +66,15 @@ function TaskComponent() {
             </div>
             {
                 tasks.map(task => (
-                    <div className='task-container' key={task.id}>
-                        <div className='task-title'>
-                            <h1>{task.name}</h1>
+                    <div className="task-container" key={task.id} draggable="true">
+                        <div className="task-container__header">
+                            <h1 className="task-container__title">{task.name}</h1>
+                            <p className="task-container__state">{task.state}</p>
+                        </div>
+
+                        <div className="task-container__info">
+                            <p className="task-container__description">{task.description}</p>
+                            <p className="task-container__date">{task.init_date}</p>
                         </div>
                     </div>
                 ))
