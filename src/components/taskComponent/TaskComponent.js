@@ -5,6 +5,12 @@ import axios from 'axios';
 //Styles
 import './TaskComponent.css'
 
+//Icons
+import { FaPen, FaTrash } from "react-icons/fa";
+
+//Components
+import Dashboard from '../Dashboard/Dashboard';
+
 function TaskComponent() {
 
     const [tasks, setTasks] = React.useState([]);
@@ -64,12 +70,21 @@ function TaskComponent() {
                     }
                 </div>
             </div>
+
+            <button className="task-container-create-task-button">
+                Create Task
+            </button>
+
             {
                 tasks.map(task => (
                     <div className="task-container" key={task.id} draggable="true">
                         <div className="task-container__header">
                             <h1 className="task-container__title">{task.name}</h1>
-                            <p className="task-container__state">{task.state}</p>
+                            <div className="task-container-status-update">
+                                <p className="task-container__state">{task.state}</p>
+                                <FaPen className="task-container__update-icon" />
+                                <FaTrash className="task-container__delete-icon" />
+                            </div>
                         </div>
 
                         <div className="task-container__info">
@@ -77,8 +92,12 @@ function TaskComponent() {
                             <p className="task-container__date">{task.init_date}</p>
                         </div>
                     </div>
+
                 ))
             }
+
+            <Dashboard projectId={params.id} />
+
         </div>
     )
 }
