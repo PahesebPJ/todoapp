@@ -77,7 +77,7 @@ function TaskComponent() {
 
             {
                 tasks.map(task => (
-                    <div className="task-container" key={task.id} draggable="true">
+                    <div className="task-container" key={task.id}>
                         <div className="task-container__header">
                             <h1 className="task-container__title">{task.name}</h1>
                             <div className="task-container-status-update">
