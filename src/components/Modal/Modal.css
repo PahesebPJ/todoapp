@@ -1,0 +1,30 @@
+.user-container-modal-user__options {
+    position: absolute;
+    padding: 20px;
+    background-color: white;
+    border-radius: 3px;
+    border: 0.5px solid #495057;
+    left: 40%;
+    top: -10%;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 7px 0px 14px 5px rgba(0,0,0,0.15);
+    max-width: 1000px;
+}
+
+.close-modal-icon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    color: #f03e3e;
+    font-size: 1rem;
+    cursor: pointer;
+    top: -3px;
+    right: -1px;
+}
+
+.close-modal-icon:hover {
+    color: #ff6b6b;
+}

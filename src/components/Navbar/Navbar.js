@@ -36,6 +36,7 @@ function Navbar() {
                     <h1>{user.username}</h1>
                     <p>{user.rol}</p>
                 </div>
+
                 <FaChevronDown className="user-container__icon" onClick={modalToggle} />
 
                 <div className="user-container__modal">
