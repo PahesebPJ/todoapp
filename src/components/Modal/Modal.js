@@ -6,13 +6,17 @@ import { FaWindowClose } from "react-icons/fa";
 //Styles
 import './Modal.css'
 
-function Modal({children}) {
+function Modal({children, state, changeState}) {
   return (
-    <div className="user-container-modal-user__options">
-        {/* <img src={props.picture} alt={props.username} className="modal-user-options__picture" /> */}
-        <FaWindowClose className="close-modal-icon" />
-        {children}
-    </div>
+    <>
+    { state &&
+      <div className="user-container-modal-user__options">
+          {/* <img src={props.picture} alt={props.username} className="modal-user-options__picture" /> */}
+          <FaWindowClose className="close-modal-icon" onClick={() => changeState(false)}/>
+          {children}
+      </div>
+    }
+    </>
   )
 }
 

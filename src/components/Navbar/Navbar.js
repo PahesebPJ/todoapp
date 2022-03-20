@@ -6,7 +6,7 @@ import './Navbar.css'
 import { FaChevronDown, FaUserAlt } from 'react-icons/fa';
 import { AiFillSetting, AiOutlineLogout } from "react-icons/ai";
 
-function Navbar() {
+function Navbar({changeState, state, changeUserProfile, userProfile}) {
 
     //Component states
     const [user, setUser] = React.useState([]);
@@ -31,7 +31,7 @@ function Navbar() {
         <div className="Navbar">
 
             <div className="user-container">
-                <img src={user.picture} alt="" className="user-container__img" />
+                <img src={user.picture} alt="" className="user-container__img" onClick={() => changeUserProfile(!userProfile)}/>
                 <div className="user-container__data">
                     <h1>{user.username}</h1>
                     <p>{user.rol}</p>
@@ -41,8 +41,8 @@ function Navbar() {
 
                 <div className="user-container__modal">
                     <ul className="modal-options-container">
-                        <li className="modal__options"> <FaUserAlt /> Profile</li>
-                        <li className="modal__options"> <AiFillSetting /> Settings</li>
+                        <li className="modal__options" onClick={() => changeUserProfile(!userProfile)}> <FaUserAlt /> Profile</li>
+                        <li className="modal__options" onClick={() => changeState(!state)}> <AiFillSetting /> Settings</li>
                         <li className="modal__options"> <AiOutlineLogout /> Logout</li>
                     </ul>
                 </div>

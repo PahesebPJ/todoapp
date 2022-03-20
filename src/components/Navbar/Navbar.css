@@ -20,6 +20,10 @@
     border: 0.5px solid #fff;
 }
 
+.user-container__img:hover {
+    cursor: pointer;
+}
+
 .user-container__data {
 
 }

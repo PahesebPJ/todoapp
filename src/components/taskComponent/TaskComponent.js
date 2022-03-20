@@ -13,7 +13,9 @@ import Dashboard from '../Dashboard/Dashboard';
 
 function TaskComponent() {
 
+    //States
     const [tasks, setTasks] = React.useState([]);
+    const [project, setProject] = React.useState([]);
 
     const params = useParams();
 
@@ -45,7 +47,9 @@ function TaskComponent() {
     useEffect(() => {
         async function fetchData() {
             const request = await axios.get("http://192.168.0.13:4000/api/task/" + params.id);
+            const projectRequest = await axios.get("http://localhost:4000/api/project/"+params.id);
             setTasks(request.data);
+            setProject(projectRequest.data);
             return request;
         }
         fetchData();
@@ -54,7 +58,7 @@ function TaskComponent() {
     return (
         <div className='container-task'>
             <div className="container-task-filter">
-                <h1 className="container-task-filter__title">Project Tasks</h1>
+                <h1 className="container-task-filter__title">{project[0].name}</h1>
                 <div className="container-task-filter__buttons">
                     {
                         buttons.map(button => {
