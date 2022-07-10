@@ -13,7 +13,7 @@ function Dashboard(props) {
 
     useEffect(() => {
         async function fetchData() {
-            const request = await axios.get("http://192.168.0.13:4000/api/userproject/" + props.projectId);
+            const request = await axios.get("http://192.168.0.3:4000/api/userproject/" + props.projectId);
             setUsers(request.data);
             return request;
         }

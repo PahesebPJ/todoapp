@@ -9,22 +9,30 @@ import './ProjectsComponent.css'
 import { FaPlus } from "react-icons/fa";
 
 
+//Components
+import Modal from '../Modal/Modal';
+
 function ProjectsComponent() {
 
     const navigate = useNavigate();
 
     const [projects, setProjects] = React.useState([]);
+    const [projectModal, setProjectModal] = React.useState(false);
 
     function navigateTo(id) {
         navigate('task/' + id);
     }
 
+    function createProject() {
+        setProjectModal(!projectModal);
+    }
+
     useEffect(() => {
-        axios.get('http://192.168.0.13:4000/api/projectUser/1').then(response => {
+        axios.get('http://192.168.0.3:4000/api/projectUser/1').then(response => {
             setProjects(response.data);
         });
     }, []);
-    
+
     return (
         <div className='container'>
             {
@@ -38,7 +46,7 @@ function ProjectsComponent() {
                     </div>
                 ))
             }
-            <div className="project__card__container">
+            <div className="project__card__container" onClick={createProject}>
                 <FaPlus
                     className="project__card__add"
                     alt=""

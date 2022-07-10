@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get("http://192.168.0.13:4000/api/users/1");
+      const request = await axios.get("http://192.168.0.3:4000/api/users/1");
       setUser(request.data[0]);
       return request;
     }

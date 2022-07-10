@@ -46,10 +46,10 @@ function TaskComponent() {
 
     useEffect(() => {
         async function fetchData() {
-            const request = await axios.get("http://192.168.0.13:4000/api/task/" + params.id);
+            const request = await axios.get("http://192.168.0.3:4000/api/task/" + params.id);
             const projectRequest = await axios.get("http://localhost:4000/api/project/"+params.id);
             setTasks(request.data);
-            setProject(projectRequest.data);
+            setProject(projectRequest.data[0]);
             return request;
         }
         fetchData();
@@ -58,7 +58,7 @@ function TaskComponent() {
     return (
         <div className='container-task'>
             <div className="container-task-filter">
-                <h1 className="container-task-filter__title">{project[0].name}</h1>
+                <h2 className="container-task-filter__title">{project.name}</h2>
                 <div className="container-task-filter__buttons">
                     {
                         buttons.map(button => {
